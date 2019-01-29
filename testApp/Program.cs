@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace testApp
 {
+
 	class My_Output
 	{
 		internal static void Print_console(string some_output)
@@ -18,8 +19,11 @@ namespace testApp
 	}
 
 	//class My_Input
+
 	//might not need a class Daily
+
 	//class WeekDay
+
 	class MonthDay
 	{
 		internal List<string>[] mdayList;
@@ -43,6 +47,7 @@ namespace testApp
 			return String.Join(", ", mdayList[date].ToArray());
 		}
 	}
+
 	class Program
 	{
 		static void Main(string[] args)
@@ -53,11 +58,20 @@ namespace testApp
 			MDay.dateAdd(6,"Bingo Cust");
 			MDay.dateAdd(6,"Zumba Cust");
 			MDay.dateAdd(5,"Super Cust");
+
+			//WeekDay WDay = new WeekDay();
+			//Implement WeekDay as array of lists,
+			//indexed on the day string (knda like a hashmap)
+
+			//My_Input.Get_input(Daily_list,Mday,WDay);
+
 			string output= "";
 			for (int i=4; i<12;i++)
 			{
 				output += DateTime.Now.AddDays(i).ToString("ddd, dd MMMM yyyy") + ": "+  MDay.getString(i) + System.Environment.NewLine;
 			}
+
+			//Implement if statement that will choose 1 of the 2 based on input
 			//My_Output.Print_console(output);
 			My_Output.Print_file(output);
 		}
