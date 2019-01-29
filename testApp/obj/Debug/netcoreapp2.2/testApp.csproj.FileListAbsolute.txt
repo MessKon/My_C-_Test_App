@@ -1,0 +1,11 @@
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/bin/Debug/netcoreapp2.2/testApp.deps.json
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/bin/Debug/netcoreapp2.2/testApp.runtimeconfig.json
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/bin/Debug/netcoreapp2.2/testApp.runtimeconfig.dev.json
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/bin/Debug/netcoreapp2.2/testApp.dll
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/bin/Debug/netcoreapp2.2/testApp.pdb
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/obj/Debug/netcoreapp2.2/testApp.csprojAssemblyReference.cache
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/obj/Debug/netcoreapp2.2/testApp.csproj.CoreCompileInputs.cache
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/obj/Debug/netcoreapp2.2/testApp.AssemblyInfoInputs.cache
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/obj/Debug/netcoreapp2.2/testApp.AssemblyInfo.cs
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/obj/Debug/netcoreapp2.2/testApp.dll
+/home/kostas/Desktop/Desktop_Trash/Projects/C#Projects/testApp/obj/Debug/netcoreapp2.2/testApp.pdb
