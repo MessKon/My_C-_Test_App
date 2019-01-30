@@ -3,55 +3,13 @@ using System.Collections.Generic;
 
 namespace testApp
 {
-
-	class My_Output
-	{
-		internal static void Print_console(string some_output)
-		{
-			Console.WriteLine(some_output);
-		}
-
-		internal static void Print_file(string some_output)
-		{
-			System.IO.File.WriteAllText(@"./out_file.txt", some_output);
-			Console.WriteLine("Output written in out_file.txt in the current directory");
-		}
-	}
-
-	//class My_Input
-
-	//might not need a class Daily
-
-	//class WeekDay
-
-	class MonthDay
-	{
-		internal List<string>[] mdayList;
-
-		internal MonthDay()
-		{
-			mdayList = new List<string>[28];
-			for (int i=0; i<28;i++)
-                        {
-				mdayList[i]= new List<string>();
-			}
-		}
-
-		internal void dateAdd(int date,string name)
-		{
-			mdayList[date].Add(name);
-		}
-
-		internal string getString(int date)
-		{
-			return String.Join(", ", mdayList[date].ToArray());
-		}
-	}
-
 	class Program
 	{
 		static void Main(string[] args)
 		{
+			int start_day_offset = 1;
+			int end_day_offset   = 90;
+
 			List<string> DailyList = new List<string>();
 
 			MonthDay MDay = new MonthDay();
@@ -59,21 +17,34 @@ namespace testApp
 			MDay.dateAdd(6,"Zumba Cust");
 			MDay.dateAdd(5,"Super Cust");
 
-			//WeekDay WDay = new WeekDay();
-			//Implement WeekDay as array of lists,
-			//indexed on the day string (knda like a hashmap)
+			WeekDay WDay = new WeekDay();
+			WDay.dayAdd("WEd","Lola Cust");
 
-			//My_Input.Get_input(Daily_list,Mday,WDay);
+			bool to_txt = My_Input.Get_input(DailyList, WDay, MDay);
 
 			string output= "";
-			for (int i=4; i<12;i++)
+			for (int i= start_day_offset; i< end_day_offset;i++)
 			{
-				output += DateTime.Now.AddDays(i).ToString("ddd, dd MMMM yyyy") + ": "+  MDay.getString(i) + System.Environment.NewLine;
+				var    current_date = DateTime.Now.AddDays(i);
+				int    date_number  = current_date.Day;
+				string date_weekday = current_date.ToString("ddd");
+
+				List<string> customers = new List<string>();
+				customers.AddRange(MDay.mdayList[date_number-1]); 
+				customers.AddRange(WDay.wdayDict[date_weekday.ToLower()]);
+				customers.AddRange(DailyList);
+ 
+				output += current_date.ToString("ddd, dd MMMM yyyy") + ": "+  String.Join(", ", customers.ToArray()) + System.Environment.NewLine;
 			}
 
-			//Implement if statement that will choose 1 of the 2 based on input
-			//My_Output.Print_console(output);
-			My_Output.Print_file(output);
+			if (to_txt)
+			{
+				My_Output.Print_file(output);
+			}
+			else
+			{
+				My_Output.Print_console(output);
+			}
 		}
 	}
 }
