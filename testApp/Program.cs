@@ -3,25 +3,24 @@ using System.Collections.Generic;
 
 namespace testApp
 {
+	//Main Program Class
 	class Program
 	{
+		//Main function
 		static void Main(string[] args)
 		{
 			int start_day_offset = 1;
-			int end_day_offset   = 90;
+			int end_day_offset   = 91;
 
+			//Initialise our 3 Structures
 			List<string> DailyList = new List<string>();
-
 			MonthDay MDay = new MonthDay();
-			MDay.dateAdd(6,"Bingo Cust");
-			MDay.dateAdd(6,"Zumba Cust");
-			MDay.dateAdd(5,"Super Cust");
-
 			WeekDay WDay = new WeekDay();
-			WDay.dayAdd("WEd","Lola Cust");
 
+			//Populate the Structurs and decide on output stream
 			bool to_txt = My_Input.Get_input(DailyList, WDay, MDay);
 
+			//Conduct output string
 			string output= "";
 			for (int i= start_day_offset; i< end_day_offset;i++)
 			{
